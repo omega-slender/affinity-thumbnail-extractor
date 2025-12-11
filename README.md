@@ -1,19 +1,68 @@
-# Affinity Thumbnail Viewer Online 🖼️
-**Affinity Thumbnail Viewer Online** is an intuitive and efficient tool designed, enabling users to process '.afphoto' and '.afdesign' files to view their thumbnails and download them as .png files easily and quickly. This project is inspired by the Python code created by **v_kyr** and uses modern web technologies such as HTML, CSS, and JavaScript to provide a smooth and accessible user experience.
+# Affinity Thumbnail Extractor 🖼️✨
 
-## Features ✨
-- Fast processing of '.afphoto' and '.afdesign' files.
-- Easy download of thumbnails as .png files.
-- User-friendly and easy-to-use interface.
+A modern, client-side web application for extracting PNG thumbnails from Affinity design files. Built with vanilla JavaScript and optimized for performance and accessibility.
 
-## How to Use 🛠️
-1. Visit [Affinity Thumbnail Viewer Online](https://omega-slender.github.io/affinity-thumbnail-viewer-online/).
-2. Upload your '.afphoto' or '.afdesign' file.
-3. View the generated thumbnail.
-4. Download the thumbnail in .png format with just one click.
+## 🎯 Overview
 
-## Credits and Acknowledgements 💖
-This project was made possible thanks to the work by **v_kyr**, who developed the [Python code](https://forum.affinity.serif.com/index.php?/topic/180457-afthumbs-extracting-png-thumbnails-from-afphoto-and-afdesign-files/) that serves as the foundation for this tool.
+Extract embedded PNG thumbnails from Affinity Photo (.afphoto), Affinity Designer (.afdesign), Affinity Publisher (.afpub), and Affinity 2 (.af) files directly in your browser. No server uploads, no data tracking: everything happens locally on your device. 🔒
 
-## Contact 🌐  
-Discover more about me and my projects on my [Linktree](https://linktr.ee/omega_slender). 🌟
+## ✨ Features
+
+### 🚀 Core Functionality
+- **Multi-format Support**: Works with `.afphoto`, `.afdesign`, `.afpub`, and `.af` files
+- **Instant Processing** ⚡: Fast extraction using optimized binary parsing
+- **Local Processing** 🔐: All operations run client-side; files never leave your device
+- **PNG Export** 💾: Download extracted thumbnails instantly
+- **Clipboard Support** 📋: Copy thumbnails directly to clipboard
+
+### 🎨 User Experience
+- **Drag & Drop** 🖱️: Drop files directly onto the interface
+- **Animated Background** 🌈: Smooth gradient animation with interactive particles
+- **Responsive Design** 📱: Optimized for desktop and mobile devices
+- **Toast Notifications** 🔔: Clear feedback for all actions
+- **Accessibility** ♿: Full keyboard navigation and screen reader support
+- **Reduced Motion** 🎬: Respects user motion preferences
+
+### ⚙️ Technical Features
+- Zero dependencies (vanilla JavaScript) 🚫📦
+- Hardware-accelerated canvas rendering 🎮
+- High-DPI display support 🖥️
+- File size validation (up to 500MB) 📏
+- Efficient memory management 🧠
+
+## 🌐 Demo
+
+**[✨ Try it live →](https://omega-slender.github.io/affinity-thumbnail-extractor/)**
+
+## 🛠️ Usage
+
+1. **Open the application** in any modern web browser 🌍
+2. **Select or drag** your Affinity file (`.afphoto`, `.afdesign`, `.afpub`, `.af`) 📂
+3. **View** the extracted thumbnail preview 👀
+4. **Download** as PNG or **copy** to clipboard 💾
+
+## 🌍 Browser Compatibility
+
+- ✅ Chrome/Edge 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+
+## 🔧 Technical Details
+
+### 🔍 PNG Extraction
+The application searches for PNG signatures within the binary data of Affinity files and extracts complete PNG images. It automatically selects the smallest PNG (typically the thumbnail) for display.
+
+## 💖 Credits
+
+This project was inspired by [v_kyr's Python implementation](https://forum.affinity.serif.com/index.php?/topic/180457-afthumbs-extracting-png-thumbnails-from-afphoto-and-afdesign-files/) for extracting PNG thumbnails from Affinity files.
+
+## 👨‍💻 Author
+
+Created by **Omega Slender**
+
+💬 Connect with me:  
+[🌳 Linktree](https://linktr.ee/omega_slender) • [💻 GitHub](https://github.com/Omega-Slender)
+
+---
+
+⭐ If you find this tool useful, consider giving it a star on GitHub!
