@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional tool for extracting and downloading thumbnails from Affinity Photo (.afphoto), Affinity Designer (.afdesign), Affinity Publisher (.afpub) and Affinity 2 (.af) files.">
+    <meta name="keywords" content="affinity, thumbnail, viewer, afphoto, afdesign, extract, png">
+    <meta name="author" content="Omega Slender">
+    <meta name="theme-color" content="#6366f1">
+    
+    <title>Affinity Thumbnail Extractor | Extract Thumbnails from .afphoto & .afdesign</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/icons/image.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="particlesCanvas" class="particles-canvas" aria-hidden="true"></canvas>
+    <div class="app" id="app">
+        <header class="header">
+            <div class="header__logo">
+                <img class="header__icon" src="assets/icons/image.svg" alt="" aria-hidden="true">
+                <h1 class="header__title">Affinity Thumbnail Extractor</h1>
+            </div>
+            <p class="header__subtitle">Extract PNG thumbnails from Affinity files (.afphoto, .afdesign, .afpub, .af)</p>
+        </header>
+
+        <main class="main">
+            <div 
+                class="dropzone" 
+                id="dropzone"
+                tabindex="0"
+                aria-label="Drop zone for file upload. Click or drag and drop an Affinity file here."
+            >
+                <label for="fileInput" class="visually-hidden">Select an Affinity file to extract thumbnail</label>
+                <input 
+                    type="file" 
+                    id="fileInput" 
+                    class="dropzone__input"
+                    accept=".afphoto,.afdesign,.afpub,.af"
+                    aria-describedby="fileHint"
+                    title="Select an Affinity file"
+                >
+                
+                <div class="dropzone__content" id="dropzoneContent">
+                    <div class="dropzone__icon-wrapper">
+                        <img class="dropzone__icon" src="assets/icons/upload.svg" alt="" aria-hidden="true">
+                    </div>
+                    <div class="dropzone__text">
+                        <span class="dropzone__title">Drop your file here</span>
+                        <span class="dropzone__subtitle">or <span class="dropzone__link">browse</span> to choose a file</span>
+                    </div>
+                    <span class="dropzone__hint" id="fileHint">Supports .afphoto, .afdesign, .afpub and .af files</span>
+                </div>
+
+                <div class="dropzone__loading" id="loadingState" hidden>
+                    <div class="spinner"></div>
+                    <span class="dropzone__loading-text">Processing file...</span>
+                </div>
+            </div>
+
+            <div class="file-info" id="fileInfo" hidden>
+                <img class="file-info__icon" src="assets/icons/file.svg" alt="" aria-hidden="true">
+                <span class="file-info__name" id="fileName"></span>
+                <span class="file-info__size" id="fileSize"></span>
+                <button class="file-info__remove" id="removeFile" aria-label="Remove file">
+                    <img src="assets/icons/close.svg" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+            <section class="result" id="resultSection" hidden>
+                <div class="result__header">
+                    <h2 class="result__title">Extracted Thumbnail</h2>
+                    <div class="result__meta" id="imageMeta"></div>
+                </div>
+                
+                <div class="result__preview" id="previewContainer">
+                    <img class="result__image" id="previewImage" alt="Extracted thumbnail preview">
+                </div>
+
+                <div class="result__actions">
+                    <a 
+                        class="btn btn--primary" 
+                        id="downloadBtn"
+                        download
+                        aria-label="Download extracted thumbnail"
+                    >
+                        <img class="btn__icon" src="assets/icons/download.svg" alt="" aria-hidden="true">
+                        Download PNG
+                    </a>
+                    <button class="btn btn--secondary" id="copyBtn" aria-label="Copy image to clipboard">
+                        <img class="btn__icon" src="assets/icons/copy.svg" alt="" aria-hidden="true">
+                        Copy to Clipboard
+                    </button>
+                </div>
+            </section>
+
+            <div class="error" id="errorSection" hidden role="alert">
+                <img class="error__icon" src="assets/icons/error.svg" alt="" aria-hidden="true">
+                <p class="error__message" id="errorMessage"></p>
+                <button class="btn btn--ghost" id="retryBtn">Try Again</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">
+                Created by <a href="https://linktr.ee/omega_slender" target="_blank" rel="noopener noreferrer" class="footer__link">Omega Slender</a>
+                <span class="footer__separator">•</span>
+                Based on research by <a href="https://forum.affinity.serif.com/index.php?/topic/180457-afthumbs-extracting-png-thumbnails-from-afphoto-and-afdesign-files/" target="_blank" rel="noopener noreferrer" class="footer__link">v_kyr</a>
+            </p>
+            <p class="footer__disclaimer">All processing happens locally in your browser. No files are uploaded.</p>
+        </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+        <span class="toast__message" id="toastMessage"></span>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="js/particles.js" defer></script>
+</body>
+</html>
