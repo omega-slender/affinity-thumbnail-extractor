@@ -30,10 +30,6 @@ Extract embedded PNG thumbnails from Affinity Photo (.afphoto), Affinity Designe
 - File size validation (up to 500MB) 📏
 - Efficient memory management 🧠
 
-## 🌐 Demo
-
-**[✨ Try it live →](https://omega-slender.github.io/affinity-thumbnail-extractor/)**
-
 ## 🛠️ Usage
 
 1. **Open the application** in any modern web browser 🌍
